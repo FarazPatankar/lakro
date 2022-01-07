@@ -9,9 +9,10 @@ Lakro is a platform built to make networking fun and authentic.
 ## Stack
 
 - [Next.js](https://nextjs.org/) - Web Application
+- [Tailwindcss]() - Styling
 - [TypeScript](https://www.typescriptlang.org/) - Type Safety
-- [Node.js]() - API Service
-- [Fastify]() - Backend Framework
+- [Node.js](https://nodejs.org/) - API Service
+- [Fastify](https://www.fastify.io/) - Backend Framework
 
 ## License
 
