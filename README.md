@@ -13,8 +13,6 @@ Lakro is a platform built to make networking fun and authentic.
 - [Node.js]() - API Service
 - [Fastify]() - Backend Framework
 
-#
-
 ## License
 
 Lakro is open-source and is under the [MIT License](LICENSE).
