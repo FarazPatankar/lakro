@@ -13,7 +13,7 @@ const Home: NextPage = () => {
         description="A platform designed to make networking fun and authentic."
       />
       <div className="flex flex-col items-center w-screen h-screen">
-        <div className="flex items-center justify-center w-full font-semibold text-white bg-blue-600 h-10">
+        {/* <div className="flex items-center text-center justify-center w-full font-semibold text-white bg-blue-600 h-10">
           🐱 Lakro.app is open source, feel free to contribute to this project -
           &nbsp;
           <Link href="https://github.com/notnick12/lakro.app">
@@ -21,7 +21,7 @@ const Home: NextPage = () => {
               Contribute here
             </a>
           </Link>
-        </div>
+        </div> */}
         <Header />
         <main className="flex flex-col w-10/12 items-center justify-center text-center mt-40">
           <h1 className="font-light mb-4 text-5xl max-w-3xl text-slate-900">
