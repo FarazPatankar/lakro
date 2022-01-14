@@ -13,14 +13,14 @@ const NotFoundPage: NextPage = () => {
       />
       <Wrapper>
         <div className="flex items-center flex-col justify-center h-screen">
-          <h1 className="text-2xl text-slate-900 font-bold">
+          <h1 className="text-2xl text-white font-bold">
             Sorry, we could not find this page.
           </h1>
-          <p className="text-slate-500 font-light mb-5">
+          <p className="text-slate-300 font-light mb-5">
             Status code: 404 (Not Found)
           </p>
           <Link href="/">
-            <Button>🏠 Return to home page</Button>
+            <Button>Return to home page</Button>
           </Link>
         </div>
       </Wrapper>
