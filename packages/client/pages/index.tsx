@@ -24,8 +24,9 @@ const Home: NextPage = () => {
             <span className="text-blue-600">authentic</span>.
           </h1>
           <p className="max-w-xl text-lg text-slate-300 font-light mb-8">
-            We're a social platform where individuals can professionally network
-            with other like-minded people and still be themselves and have fun.{' '}
+            We&apos;re a social platform where individuals can professionally
+            network with other like-minded people and still be themselves and
+            have fun.{' '}
           </p>
           <Link href={``}>
             <Button>
