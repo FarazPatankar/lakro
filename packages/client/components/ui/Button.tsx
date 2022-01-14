@@ -5,7 +5,7 @@ export const Button: React.FC<
 > = (props) => {
   return (
     <button
-      className="flex items-center justify-center text-white rounded-md bg-blue-600 h-12 pl-4 pr-4 font-bold hover:bg-blue-700 duration-500"
+      className="flex items-center w-fit whitespace-nowrap justify-center text-white rounded-lg bg-blue-600 h-12 text-sm px-4 py-2 hover:bg-blue-700 duration-500"
       {...props}
     >
       {props.children}

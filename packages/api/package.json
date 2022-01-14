@@ -4,14 +4,19 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "dev": "ts-node-dev ./src/index.ts"
+    "dev": "ts-node-dev ./src/index.ts",
+    "prisma:generate": "prisma generate",
+    "prisma:push": "prisma db push",
+    "prisma:studio": "prisma studio",
+    "prisma:format": "prisma format"
   },
   "dependencies": {
+    "@prisma/client": "^3.8.0",
     "fastify": "^3.25.3",
     "fastify-autoload": "^3.10.0",
     "fastify-cors": "^6.0.2",
     "fastify-oauth2": "^4.4.0",
-    "prisma": "^3.7.0"
+    "prisma": "^3.8.0"
   },
   "devDependencies": {
     "ts-node-dev": "^1.1.8",
