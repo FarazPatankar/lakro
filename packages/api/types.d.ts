@@ -4,4 +4,10 @@ declare module 'fastify' {
   interface FastifyInstance {
     googleOAuth2: OAuth2Namespace;
   }
+
+  interface FastifyRequest {
+    email: string | undefined;
+    googleToken: string | undefined;
+    name: string;
+  }
 }
