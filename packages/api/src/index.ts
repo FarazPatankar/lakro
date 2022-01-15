@@ -2,11 +2,14 @@ import Fastify from 'fastify';
 import cors from 'fastify-cors';
 import autoLoad from 'fastify-autoload';
 import OAuth2 from 'fastify-oauth2';
+import fastifyCookie from 'fastify-cookie';
 import { join } from 'path';
 import { API_URL, PORT } from './lib/constants';
+import 'dotenv/config';
 
 const fastify = Fastify();
 
+fastify.register(fastifyCookie);
 fastify.register(autoLoad, {
   dir: join(__dirname, './routes'),
   options: { prefix: '/v1' },
@@ -14,12 +17,13 @@ fastify.register(autoLoad, {
 
 fastify.register(cors, {
   credentials: true,
-  origin: ['https://lakro.app'],
+  origin: ['https://lakro.app', 'http://localhost:3000'],
   methods: ['GET', 'POST', 'PATCH', 'DELETE'],
 });
 
 fastify.register(OAuth2 as any, {
   name: 'googleOAuth2',
+  scope: ['profile email'],
   credentials: {
     auth: OAuth2.GOOGLE_CONFIGURATION,
     client: {
@@ -27,8 +31,8 @@ fastify.register(OAuth2 as any, {
       secret: process.env.GOOGLE_CLIENT_SECRET,
     },
   },
-
-  callbackUri: `${API_URL}/auth/callback`,
+  startRedirectPath: `/v1/auth/google`,
+  callbackUri: `${API_URL}/auth/google/callback`,
 });
 
 fastify.get('/', (req, reply) => {

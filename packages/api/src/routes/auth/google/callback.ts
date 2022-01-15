@@ -1,14 +1,18 @@
 import { FastifyInstance, FastifyReply, FastifyRequest } from 'fastify';
-import { OAuth2Namespace } from 'fastify-oauth2';
+import dayjs from 'dayjs';
 
-export default (fastify: FastifyInstance, opts, done) => {
+export default (fastify, opts, done) => {
   fastify.get('/callback', async (req: FastifyRequest, reply: FastifyReply) => {
     const token =
       await fastify.googleOAuth2.getAccessTokenFromAuthorizationCodeFlow(req);
 
     reply
-      .status(200)
-      .send({ success: true, token })
+      .setCookie('lakro-token', token.access_token, {
+        httpOnly: true,
+        sameSite: true,
+        path: '/',
+        expires: dayjs().add(14, 'days').toDate(),
+      })
       .redirect(process.env.CLIENT_URL ?? 'http://localhost:3000');
   });
 
