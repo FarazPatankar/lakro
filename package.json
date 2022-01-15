@@ -1,0 +1,16 @@
+{
+  "name": "lakro.app",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "dev:client": "yarn workspace @lakro.app/client dev",
+    "dev:api": "yarn workspace @lakro.app/api dev"
+  },
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/notnick12/lakro.app.git",
+  "author": "Nicholas <contactnicholas81@gmail.com>",
+  "license": "MIT"
+}
