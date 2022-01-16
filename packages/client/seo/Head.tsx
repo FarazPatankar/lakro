@@ -13,6 +13,8 @@ export default ({ title, description }: Props) => {
       <meta name="description" content={description} />
       <meta name="keywords" content="lakro, lakro.app, oss" />
       <meta property="og:title" content={!title ? 'Lakro' : title} />
+      <meta name="og:url" content="https://lakro.app" />
+      <meta name="og:site_name" content="Lakro" />
       <meta property="og:description" content={description} />
       <meta property="og:image" content="/assets/card.png" />
       <meta property="og:type" content="website" />
