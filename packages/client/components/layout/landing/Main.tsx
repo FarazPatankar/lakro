@@ -16,12 +16,12 @@ export const Main: React.FC = () => {
         network with other like-minded people and still be themselves and have
         fun.{' '}
       </p>
-      <Link href={`${LAKRO_API_URL}/auth/google`}>
+      <a href={`${LAKRO_API_URL}/auth/google`}>
         <Button>
           <Google className="mr-2" />
           Sign up with Google &#x2192;
         </Button>
-      </Link>
+      </a>
     </main>
   );
 };
