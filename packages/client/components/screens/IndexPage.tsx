@@ -8,7 +8,7 @@ export const IndexPage: React.FC = () => {
   const { data, error } = useUser();
 
   return (
-    <Wrapper>
+    <>
       <Head
         title="Lakro • Home"
         description="A platform designed to make networking fun and authentic."
@@ -27,6 +27,6 @@ export const IndexPage: React.FC = () => {
           <p className="text-slate-300">{data.user.email}</p>
         </div>
       </div>
-    </Wrapper>
+    </>
   );
 };

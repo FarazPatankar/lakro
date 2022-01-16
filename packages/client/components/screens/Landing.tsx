@@ -1,6 +1,5 @@
 import { Footer } from '../layout/landing/Footer';
 import { Header } from '../layout/landing/Header';
-import { Wrapper } from '../layout/Wrapper';
 import { Main } from '../layout/landing/Main';
 import { About } from '../layout/landing/About';
 import { OSS } from '../layout/landing/OSS';
@@ -15,14 +14,12 @@ export const Landing: React.FC = () => {
         description="A platform designed to make networking fun and authentic."
       />
       <Header />
-      <Wrapper>
-        <Container>
-          <Main />
-          <About />
-          <OSS />
-          <Footer />
-        </Container>
-      </Wrapper>
+      <Container>
+        <Main />
+        <About />
+        <OSS />
+        <Footer />
+      </Container>
     </>
   );
 };
