@@ -11,7 +11,7 @@ export const Landing: React.FC = () => {
   return (
     <>
       <Head
-        title="Lakro - Network with like-minded individuals, authentically."
+        title="Lakro - Network with like-minded individuals."
         description="A platform designed to make networking fun and authentic."
       />
       <Header />
