@@ -18,7 +18,7 @@ export const About: React.FC = () => {
   return (
     <div className="flex flex-col text-center items-center justify-center w-full h-fit ">
       <h1 className="font-extrabold text-white tracking-tight leading-none mb-5 text-[1.9rem] md:text-[2.4rem]">
-        What we're <span className="text-accent">about</span>.
+        What we&apos;re <span className="text-accent">about</span>.
       </h1>
       <p className="text-[1rem] md:text-[1.3rem] text-text-primary font-light mb-8 px-0 md:px-24">
         Lakro is a professional network built around authenticity and
