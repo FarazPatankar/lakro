@@ -13,6 +13,8 @@ export const About: React.FC = () => {
     'Payment System',
     'Communities',
     'Highlights',
+    'Profile Customization',
+    'Premium',
   ];
 
   return (

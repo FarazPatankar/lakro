@@ -32,6 +32,11 @@ export const authenticateUserCookieSession = async (
     if (!user) {
       await prisma.user.create({
         data: {
+          id: data.sub,
+          picture: data.picture,
+          email_verified: data.email_verified,
+          location: 'London, England',
+          locale: data.locale,
           email: data.email,
           name: data.name,
         },
@@ -39,12 +44,11 @@ export const authenticateUserCookieSession = async (
     }
 
     req.email = data.email;
-    req.googleToken = token;
+    req.token = token;
 
     return data;
   } catch (err) {
-    req.email = undefined;
-    req.googleToken = undefined;
+    req.token = undefined;
 
     return reply.status(401).send({
       success: false,

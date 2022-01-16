@@ -1,6 +1,7 @@
 import type { AppProps } from 'next/app';
 import { CookiesProvider } from 'react-cookie';
 import { SWRConfig } from 'swr';
+import { Wrapper } from '../components/layout/Wrapper';
 import { apiRequestHandler } from '../lib/auth/Api';
 import '../styles/globals.css';
 
@@ -14,7 +15,9 @@ function MyApp({ Component, pageProps }: AppProps) {
           revalidateOnFocus: false,
         }}
       >
-        <Component {...pageProps} />
+        <Wrapper>
+          <Component {...pageProps} />
+        </Wrapper>
       </SWRConfig>
     </CookiesProvider>
   );
