@@ -5,6 +5,7 @@
     "packages/*"
   ],
   "scripts": {
+    "start": "yarn workspace @lakro.app/api start",
     "dev:client": "yarn workspace @lakro.app/client dev",
     "dev:api": "yarn workspace @lakro.app/api dev"
   },
