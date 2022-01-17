@@ -9,11 +9,11 @@ export default (fastify: FastifyInstance, opts, done) => {
     '/me',
     { preHandler: [authenticateUserCookieSession] },
     async (req: any, reply: FastifyReply) => {
-      const authUser = await prisma.user.findUnique({
+      const user = await prisma.user.findUnique({
         where: { email: req.email },
       });
 
-      if (!authUser) {
+      if (!user) {
         return reply.status(404).send({
           success: false,
           error: 'User not found',
@@ -22,7 +22,7 @@ export default (fastify: FastifyInstance, opts, done) => {
 
       reply.status(200).send({
         success: true,
-        user: authUser,
+        user,
       });
     }
   );

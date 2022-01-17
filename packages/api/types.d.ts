@@ -6,7 +6,8 @@ declare module 'fastify' {
   }
 
   interface FastifyRequest {
-    email: string | undefined;
+    id: string | any;
+    email: string;
     token: string | undefined;
   }
 }

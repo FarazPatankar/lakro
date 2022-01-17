@@ -1,11 +1,21 @@
 import Head from '../../seo/Head';
-
-import { Wrapper } from '../layout/Wrapper';
 import { useUser } from '../../lib/auth/Api';
-import { Button } from '../ui/Button';
+import { Navbar } from '../layout/web/Navbar';
+import Link from 'next/link';
+
+// TODO: clean this up
+
+import axios from 'axios';
+import { LAKRO_API_URL } from '../../lib/constants';
 
 export const IndexPage: React.FC = () => {
   const { data, error } = useUser();
+
+  const deleteAccHandler = async () => {
+    await axios.delete(`${LAKRO_API_URL}/user/delete`, {
+      withCredentials: true,
+    });
+  };
 
   return (
     <>
@@ -13,20 +23,33 @@ export const IndexPage: React.FC = () => {
         title="Lakro • Home"
         description="A platform designed to make networking fun and authentic."
       />
-      <div className="flex w-screen h-screen items-center justify-center">
-        <p className="text-red-500 text-sm mb-2">
-          {' '}
-          <i>
-            <b>{error && `Something went wrong: ${error}`}</b>
-          </i>
-        </p>
-        <div className="flex flex-col">
-          <h1 className="text-white text-xl font-bold">
-            👋 Welcome {data.user.name}!
-          </h1>
-          <p className="text-slate-300">{data.user.email}</p>
-        </div>
+      <div className="flex w-screen flex-col relative">
+        {/* will setup state management soon, pls don't shout at me LOL */}
+        <Notice />
+        <Navbar data={data} />
       </div>
     </>
+  );
+};
+
+const Notice: React.FC = () => {
+  return (
+    <div className="bg-accent h-12 text-sm w-screen flex items-center text-center justify-center">
+      Seems a bit empty right now, join our discord server for updates.{' '}
+      <JoinDiscordCustomButton />
+    </div>
+  );
+};
+
+const JoinDiscordCustomButton: React.FC = () => {
+  return (
+    <Link href="">
+      <a
+        target="_blank"
+        className="ml-2 text-sm flex items-center border-solid border-white border h-8 px-2 rounded hover:bg-white hover:text-accent duration-500"
+      >
+        Discord Server &#x2192;
+      </a>
+    </Link>
   );
 };
