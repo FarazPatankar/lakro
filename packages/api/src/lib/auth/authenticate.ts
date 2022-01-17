@@ -1,6 +1,7 @@
 import { FastifyReply, FastifyRequest } from 'fastify';
-import axios from 'axios';
 import { PrismaClient } from '@prisma/client';
+import faker from '@faker-js/faker';
+import axios from 'axios';
 
 const prisma = new PrismaClient();
 
@@ -35,6 +36,8 @@ export const authenticateUserCookieSession = async (
           id: data.sub,
           picture: data.picture,
           email_verified: data.email_verified,
+          username:
+            `${data.name.toLowerCase()}${faker.datatype.number()}`.trim(),
           location: 'London, England',
           locale: data.locale,
           email: data.email,
@@ -44,12 +47,13 @@ export const authenticateUserCookieSession = async (
     }
 
     req.email = data.email;
+    req.id = user?.id;
     req.token = token;
 
     return data;
   } catch (err) {
     req.token = undefined;
-
+    console.log(err);
     return reply.status(401).send({
       success: false,
       error: 'Invalid token',

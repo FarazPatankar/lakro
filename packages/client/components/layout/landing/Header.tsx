@@ -8,14 +8,8 @@ export const Header: React.FC = () => {
         Lakro.<span className="text-accent">app</span>
       </h1>
       <div className="flex items-center">
-        <Link href="https://github.com/notnick12/lakro">
-          <a
-            target="_blank"
-            className="text-text-primary hidden text-base mr-10 duration-500 hover:text-white md:flex"
-          >
-            GitHub
-          </a>
-        </Link>
+        <HeadLink href="https://twitter.com/lakroapp">Twitter</HeadLink>
+        <HeadLink href="https://github.com/notnick12/lakro">GitHub</HeadLink>
         <Link href="https://discord.gg/U52nZh52zT">
           <Button
             style={{
@@ -28,6 +22,23 @@ export const Header: React.FC = () => {
         </Link>
       </div>
     </header>
+  );
+};
+
+type Props = {
+  href?: string | undefined;
+};
+
+const HeadLink: React.FC<Props> = ({ children, href }) => {
+  return (
+    <Link href={`${href}`}>
+      <a
+        target="_blank"
+        className="text-text-primary hidden text-base mr-10 duration-500 hover:text-white md:flex"
+      >
+        {children}
+      </a>
+    </Link>
   );
 };
 

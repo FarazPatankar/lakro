@@ -11,8 +11,10 @@ datasource db {
 }
 
 model User {
+
   id             String  @unique
   email          String  @unique
+  username       String  @unique
   picture        String
   location       String?
   locale         String
