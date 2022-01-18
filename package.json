@@ -5,7 +5,6 @@
     "packages/*"
   ],
   "scripts": {
-    "start": "node packages/api/dist/index.js",
     "dev:client": "yarn workspace @lakro.app/client dev",
     "dev:api": "yarn workspace @lakro.app/api dev"
   },
