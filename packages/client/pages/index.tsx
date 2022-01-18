@@ -1,8 +1,8 @@
+import { LoadingScreen } from '../components/screens/LoadingScreen';
 import { IndexPage } from '../components/screens/IndexPage';
 import { Landing } from '../components/screens/Landing';
 import { useUser } from '../lib/auth/Api';
 import type { NextPage } from 'next';
-import { LoadingScreen } from '../components/screens/LoadingScreen';
 
 const Home: NextPage = () => {
   const { data, loading, error } = useUser();
@@ -17,9 +17,9 @@ const Home: NextPage = () => {
     when I get the API up and running. - Nicholas
   */
 
-  // if (loading || error) {
-  //   return <LoadingScreen />;
-  // }
+  if (loading || error) {
+    return <LoadingScreen />;
+  }
 
   return <>{data?.user ? <IndexPage /> : <Landing />}</>;
 };

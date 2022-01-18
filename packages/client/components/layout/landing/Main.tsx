@@ -5,7 +5,7 @@ import Link from 'next/link';
 
 export const Main: React.FC = () => {
   return (
-    <main className="flex flex-col items-center mt-10 justify-center text-center h-screen">
+    <main className="flex px-2 md:px-16 flex-col mt-10 justify-center w-full h-screen">
       <h1 className="font-extrabold mb-4 tracking-tight leading-none text-[2.5rem] max-w-4xl text-white md:text-[3.3rem]">
         A platform designed to make networking fun and{' '}
         <span className="text-accent">authentic</span>.

@@ -7,6 +7,7 @@ import Link from 'next/link';
 
 import axios from 'axios';
 import { LAKRO_API_URL } from '../../lib/constants';
+import { Button } from '../ui/Button';
 
 export const IndexPage: React.FC = () => {
   const { data, error } = useUser();
@@ -43,7 +44,7 @@ const Notice: React.FC = () => {
 
 const JoinDiscordCustomButton: React.FC = () => {
   return (
-    <Link href="">
+    <Link href="https://discord.gg/U52nZh52zT">
       <a
         target="_blank"
         className="ml-2 text-sm flex items-center border-solid border-white border h-8 px-2 rounded hover:bg-white hover:text-accent duration-500"

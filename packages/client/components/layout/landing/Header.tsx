@@ -3,7 +3,7 @@ import { Button } from '../../ui/Button';
 
 export const Header: React.FC = () => {
   return (
-    <header className="flex items-center justify-between z-10 drop-shadow-md bg-bg-default fixed px-12 h-20 w-full md:px-44">
+    <header className="flex items-center justify-between z-10 drop-shadow-xl bg-bg-default fixed px-12 h-20 w-full md:px-44">
       <h1 className="text-white font-semibold text-xl">
         Lakro.<span className="text-accent">app</span>
       </h1>

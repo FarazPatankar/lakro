@@ -25,5 +25,7 @@ export const Landing: React.FC = () => {
 };
 
 const Container: React.FC = ({ children }) => {
-  return <div className="flex flex-col items-center w-10/12">{children}</div>;
+  return (
+    <div className="flex custom flex-col items-center w-5/6">{children}</div>
+  );
 };

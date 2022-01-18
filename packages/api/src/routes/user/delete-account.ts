@@ -4,6 +4,8 @@ import { PrismaClient } from '@prisma/client';
 
 const prisma = new PrismaClient();
 
+// TODO: fix this later
+
 export default (fastify: FastifyInstance, opts, done) => {
   fastify.delete(
     '/delete',
