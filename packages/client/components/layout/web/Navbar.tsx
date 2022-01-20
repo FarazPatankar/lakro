@@ -1,4 +1,7 @@
+import { useState } from 'react';
+import { Search } from '../../icons/Search';
 import { Button } from '../../ui/Button';
+import { Input } from '../../ui/Input';
 
 // TODO Clean this up
 type Props = {
@@ -6,12 +9,17 @@ type Props = {
 };
 
 export const Navbar: React.FC<Props> = ({ data }) => {
-  console.log(data.user);
+  const [search, setSearch] = useState('');
+
+  const searchRequestHandler = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+  };
+
   return (
     <nav className="flex items-center justify-between drop-shadow-md bg-bg-default relative px-12 h-20 w-full">
       <div className="flex items-center">
         <img
-          className="rounded-full h-10 w-10 mr-4"
+          className="rounded-full h-10 w-10 mr-4 hover:cursor-pointer"
           src={data.user.picture}
           referrerPolicy="no-referrer"
           alt="profile pic"
@@ -21,7 +29,21 @@ export const Navbar: React.FC<Props> = ({ data }) => {
           <p className="text-sm text-text-primary">{data.user.email}</p>
         </div>
       </div>
-      <Button>Account Settings</Button>
+      <form
+        className="flex items-center bg-bg-secondary h-12 rounded-lg text-text-primary px-4"
+        onSubmit={searchRequestHandler}
+      >
+        <Search />
+        <Input
+          id="search"
+          name="search"
+          placeholder="Search Lakro"
+          value={search}
+          onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+            setSearch(e.currentTarget.value)
+          }
+        />
+      </form>
     </nav>
   );
 };

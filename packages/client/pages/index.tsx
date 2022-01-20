@@ -17,9 +17,9 @@ const Home: NextPage = () => {
     when I get the API up and running. - Nicholas
   */
 
-  // if (loading || error) {
-  //   return <LoadingScreen />;
-  // }
+  if (loading || error) {
+    return <LoadingScreen />;
+  }
 
   return <>{data?.user ? <IndexPage /> : <Landing />}</>;
 };
