@@ -45,7 +45,10 @@ fastify.get('/', (req, reply) => {
   });
 });
 
-fastify.listen(PORT, (error, address) => {
-  if (error) throw error;
-  console.log(`Lakro API running on port ${address}`);
-});
+fastify
+  .listen({ port: 8015, host: '0.0.0.0' })
+  .then((address) => console.log(`server listening on ${address}`))
+  .catch((err) => {
+    console.log('Error starting server:', err);
+    process.exit(1);
+  });
