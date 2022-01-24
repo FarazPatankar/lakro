@@ -46,7 +46,7 @@ fastify.get('/', (req, reply) => {
 });
 
 fastify
-  .listen({ port: 8015, host: '0.0.0.0' })
+  .listen({ port: PORT as any, host: '0.0.0.0' })
   .then((address) => console.log(`server listening on ${address}`))
   .catch((err) => {
     console.log('Error starting server:', err);
