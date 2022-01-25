@@ -45,10 +45,7 @@ fastify.get('/', (req, reply) => {
   });
 });
 
-fastify
-  .listen({ port: PORT as any, host: '0.0.0.0' })
-  .then((address) => console.log(`server listening on ${address}`))
-  .catch((err) => {
-    console.log('Error starting server:', err);
-    process.exit(1);
-  });
+fastify.listen(PORT, '0.0.0.0', (err, address) => {
+  if (err) throw err;
+  console.log(`API running on ${address}`);
+});
