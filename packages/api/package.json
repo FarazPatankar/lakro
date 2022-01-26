@@ -6,6 +6,7 @@
   "license": "MIT",
   "scripts": {
     "dev": "ts-node-dev --poll --exit-child --transpile-only ./src/index.ts",
+    "build": "tsc -p tsconfig.json",
     "start": "node dist/index.js",
     "prisma:generate": "prisma generate",
     "prisma:push": "prisma db push",
